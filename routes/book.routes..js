@@ -50,10 +50,10 @@ router.get("/book/desc", async (req, res) => {
 });
 
 // Get books filtered by author
-router.get("/book/author/:author", async (req, res) => {
-  const { author } = req.params;
+router.get("/book/genre/:genre", async (req, res) => {
+  const { genre } = req.params;
   try {
-    const books = await BookModel.find({ Author: author });
+    const books = await BookModel.find({ Genre: genre });
     res.status(200).json(books);
   } catch (error) {
     console.log(error);
